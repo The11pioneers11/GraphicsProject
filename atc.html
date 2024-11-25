@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ATC Radar Simulation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            color: lime;
+            display: flex;
+        }
+        #radarCanvas {
+            width: 90vw; 
+            height: 90vh;
+        }
+        #controls {
+            padding: 20px;
+            color: lime;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            background-color: rgba(0, 0, 0, 0.8); 
+            width: 10vw; 
+            box-sizing: border-box; 
+        }
+        #airportInfo {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        #callsign {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            background-color: #222;
+            color: lime;
+            border: 1px solid lime;
+            font-size: 16px;
+        }
+        #currentStatus {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid lime;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="radarCanvas"></canvas>
+    <div id="controls">
+        <div id="airportInfo">Airport: KAMA (Amarillo Rick Husband International Airport)</div>
+        <div id="callsign">Callsign: </div> <!-- Placeholder for the callsign -->
+        <h2>Enter Commands</h2>
+        <form>
+            <label for="speed">Speed:</label>
+            <input type="text" id="speed" name="speed" placeholder="Enter speed">
+
+            <label for="altitude">Altitude:</label>
+            <input type="text" id="altitude" name="altitude" placeholder="Enter altitude">
+
+            <label for="heading">Heading:</label>
+            <input type="text" id="heading" name="heading" placeholder="Enter heading">
+
+            <label for="direct">Direct To:</label>
+            <input type="text" id="direct" name="direct" placeholder="Enter destination">
+        </form>
+        
+        <div id="currentStatus">
+            <h3>Current Status</h3>
+            <p>Speed: <span id="currentSpeed"></span></p>
+            <p>Altitude: <span id="currentAltitude"></span></p>
+            <p>Heading: <span id="currentHeading"></span></p>
+            <p>Direct To: <span id="currentDirect"></span></p>
+        </div>
+    </div>
+    <script src="radar.js"></script>
+</body>
+</html>
